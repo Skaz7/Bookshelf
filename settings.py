@@ -1,4 +1,5 @@
 import os
+import sqlite3
 from datetime import datetime
 
 
@@ -7,6 +8,11 @@ DB_FILE_NAME = './Data/bookshelf.db'
 
 def database_exist_check():
     return os.path.exists(DB_FILE_NAME)
+
+
+def connect_to_database():
+    conn = sqlite3.connect(DB_FILE_NAME)
+    cursor = conn.cursor()
 
 
 class Book:
