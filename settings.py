@@ -1,51 +1,24 @@
-import os
-import sqlite3
 from datetime import datetime
 
 
-DB_FILE_NAME = './Data/bookshelf.db'
+database_file = './Data/bookshelf.db'
 
 
-def database_exist_check():
-    return os.path.exists(DB_FILE_NAME)
 
 
-def connect_to_database():
-    conn = sqlite3.connect(DB_FILE_NAME)
-    cursor = conn.cursor()
+class Catalog:
+    """Main class for searching for books.
+    User can search database by book type (printed, ebook, audiobook), by author name, 
+    by genre, by owner, and by country."""
+    def __init__(self, *args):
+        pass
 
-
-class Book:
-    def __init__(self, title, author, genre, year, reading):
-        self.title = title
-        self.author = author
-        self.genre = genre
-        self.year = year
-        self.reading = reading
-
-
-class PrintedBook(Book):
-    def __init__(self, title, author, genre, year, reading, pages):
-        super().__init__(self, title, author, genre, year, reading)
-        self.pages = pages
-
-
-class EBook(Book):
-    def __init__(self, title, author, genre, year, reading, eformat, device, owner, subscribed):
-        super().__init__(self, title, author, genre, year, reading)
-        self.format = eformat
-        self.device = device
-        self.owner = owner
-        self.subscribed = subscribed
-
-
-class Audiobook(Book):
-    def __init__(self, title, author, genre, year, reading, subscribed):
-        super().__init__(self, title, author, genre, year, reading)
-        self.subscribed = subscribed
+    def search(self):
+        pass
 
 
 class Owner:
+    """Owner class with information about borrowed books."""
     def __init__(self, firstname: str, lastname: str, borrowdate: str, returned: bool, returndate: str):
         self.firstname = firstname
         self.lastname = lastname
@@ -59,6 +32,7 @@ class Owner:
 
 
 class Read:
+    """Read class with information about reading a book."""
     def __init__(self, start, end, duringreading, note, review):
         self.start = start
         self.end = end
