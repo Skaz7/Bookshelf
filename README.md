@@ -1,5 +1,9 @@
-## Bookshelf
+#### Bookshelf
 
-### Books database with Graphical User Interface made in PyQt5 and PySide2
+*Books database with Graphical User Interface made in PyQt5 and PySide2*
 
-#### Try of test driven development
+In progress:
+main classes
+
+ToDo:
+    GUI - march 2023
