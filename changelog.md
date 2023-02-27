@@ -1,2 +1,3 @@
-version 0.1.0 - Initial release, started to make classes
-version 0.2.0 - some classes added
+0.1.0 - Initial release, started to make classes
+0.2.0 - some classes added
+0.2.1 - add book menu works

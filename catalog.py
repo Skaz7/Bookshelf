@@ -5,7 +5,7 @@ from datetime import datetime
 database_file = "./Data/bookshelf.db"
 
 
-class Catalogue:
+class Catalog:
     """Main class for storing and searching for books.
     User can search database by book type (printed, ebook, audiobook), by author name,
     by genre, by owner, and by country."""

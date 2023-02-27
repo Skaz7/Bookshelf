@@ -20,16 +20,22 @@ def add_book():
     author = input("Book author: ")
     genre = input("Book genre: ")
     year = int(input("Book year: "))
-    reading_status = bool(input("Book reading status: "))
     pages = int(input("Book pages: "))
 
-    new_book = PrintedBook(title, author, genre, year, reading_status, pages)
+    new_book = PrintedBook(
+        title=title,
+        author=author,
+        genre=genre,
+        year=year,
+        add_date=datetime.today().date(),
+        pages=pages,
+    )
 
-    print("Book created!")
-    print(new_book.title)
-    print(new_book.author)
-    print(new_book.genre)
-    print(new_book.year)
-    print(new_book.reading_status)
-    print(new_book.pages)
-    print("\nAdd this book to database (Y/N) ?")
+    print("\n\nBook created!\n")
+    print(f"Title:     {new_book.title}")
+    print(f"Author:    {new_book.author}")
+    print(f"Genre:     {new_book.genre}")
+    print(f"Year:      {new_book.year}")
+    print(f"Pages:     {new_book.pages}")
+    print(f"Added:     {new_book.add_date}\n")
+    print("\nAdd this book to database (Y/N) ?\n")

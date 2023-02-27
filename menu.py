@@ -1,6 +1,6 @@
 import sys
 import os
-from catalogue import Catalogue
+from catalog import Catalog
 import time
 
 
@@ -8,7 +8,7 @@ class Menu:
     """Displays menu and responds to choices when run."""
 
     def __init__(self):
-        self.catalogue = Catalogue()
+        self.catalog = Catalog()
         self.choices = {
             "1": self.show_books,
             "2": self.search_books,
@@ -43,3 +43,7 @@ Catalogue Menu:
             else:
                 print(f"{choice} is not a valid option.")
                 time.sleep(1)
+
+
+menu = Menu()
+menu.run()

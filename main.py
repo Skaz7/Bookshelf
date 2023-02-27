@@ -7,6 +7,8 @@ import sys
 import pytest
 import os
 
+database_file = "./Data/bookshelf.db"
+
 
 def main():
     """Functions that creates main application window and establishes connection to database."""
