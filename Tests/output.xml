@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.7 on win32)" generated="20221113 14:17:05.046" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\OneDrive\Repositories\Bookshelf\Tests">
+<suite id="s1-s1" name="test Main" source="D:\OneDrive\Repositories\Bookshelf\Tests\test_Main.robot">
+<test id="s1-s1-t1" name="After starting main app as python script, it keeps running in the background" line="11">
+<kw name="Start main application using python script">
+<kw name="Start Process" library="Process">
+<var>${process}</var>
+<arg>${python310}</arg>
+<arg>main.py</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20221113 14:17:05.194" level="INFO">Starting process:
+C:\Python310\python.exe main.py</msg>
+<msg timestamp="20221113 14:17:05.202" level="INFO">${process} = &lt;Popen: returncode: None args: ['C:\\Python310\\python.exe', 'main.py']&gt;</msg>
+<status status="PASS" starttime="20221113 14:17:05.193" endtime="20221113 14:17:05.202"/>
+</kw>
+<kw name="Get Process Id" library="Process">
+<var>${processid}</var>
+<doc>Returns the process ID (pid) of the process as an integer.</doc>
+<msg timestamp="20221113 14:17:05.203" level="INFO">${processid} = 7648</msg>
+<status status="PASS" starttime="20221113 14:17:05.202" endtime="20221113 14:17:05.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${processid}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221113 14:17:05.204" endtime="20221113 14:17:05.205"/>
+</kw>
+<status status="PASS" starttime="20221113 14:17:05.192" endtime="20221113 14:17:05.205"/>
+</kw>
+<kw name="Check if database file exists">
+<kw name="Database Exist Check" library="settings">
+<var>${dataexists}</var>
+<msg timestamp="20221113 14:17:05.207" level="INFO">${dataexists} = True</msg>
+<status status="PASS" starttime="20221113 14:17:05.206" endtime="20221113 14:17:05.207"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${dataexists}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221113 14:17:05.207" endtime="20221113 14:17:05.208"/>
+</kw>
+<status status="PASS" starttime="20221113 14:17:05.206" endtime="20221113 14:17:05.208"/>
+</kw>
+<kw name="Check connection to database">
+<kw name="Connect To Database" library="settings">
+<status status="PASS" starttime="20221113 14:17:05.209" endtime="20221113 14:17:05.211"/>
+</kw>
+<status status="PASS" starttime="20221113 14:17:05.209" endtime="20221113 14:17:05.211"/>
+</kw>
+<kw name="Main application should be running">
+<kw name="Is Process Running" library="Process">
+<var>${running}</var>
+<doc>Checks is the process running or not.</doc>
+<msg timestamp="20221113 14:17:05.213" level="INFO">${running} = True</msg>
+<status status="PASS" starttime="20221113 14:17:05.212" endtime="20221113 14:17:05.213"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${running}</arg>
+<arg>${True}</arg>
+<arg>msg=APP is not running, but should be</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221113 14:17:05.213" endtime="20221113 14:17:05.213"/>
+</kw>
+<status status="PASS" starttime="20221113 14:17:05.212" endtime="20221113 14:17:05.213"/>
+</kw>
+<kw name="Close process">
+<kw name="Terminate Process" library="Process">
+<arg>kill=True</arg>
+<doc>Stops the process gracefully or forcefully.</doc>
+<msg timestamp="20221113 14:17:05.215" level="INFO">Forcefully killing process.</msg>
+<msg timestamp="20221113 14:17:05.325" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20221113 14:17:05.215" endtime="20221113 14:17:05.325"/>
+</kw>
+<status status="PASS" starttime="20221113 14:17:05.214" endtime="20221113 14:17:05.326"/>
+</kw>
+<status status="PASS" starttime="20221113 14:17:05.190" endtime="20221113 14:17:05.327"/>
+</test>
+<status status="PASS" starttime="20221113 14:17:05.128" endtime="20221113 14:17:05.329"/>
+</suite>
+<status status="PASS" starttime="20221113 14:17:05.053" endtime="20221113 14:17:05.332"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="test Main">Tests.test Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
