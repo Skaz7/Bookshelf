@@ -1,3 +1,6 @@
+last_id = 0
+
+
 class Book:
     """Main Book class, other classes will inherit from this class"""
 
@@ -14,9 +17,9 @@ class Book:
         self.genre = genre
         self.year = year
         self.add_date = add_date
-        # global last_id
-        # last_id += 1
-        # self.id = last_id
+        global last_id
+        last_id += 1
+        self.id = last_id
 
 
 class PrintedBook(Book):

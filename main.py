@@ -17,7 +17,8 @@ def main():
 
 if __name__ == "__main__":
     if database_exist_check(database_file):
-        add_book()
+        while True:
+            add_book()
 
     else:
         print("\nCan't find database file!\n")

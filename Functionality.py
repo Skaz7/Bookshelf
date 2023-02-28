@@ -32,6 +32,7 @@ def add_book():
     )
 
     print("\n\nBook created!\n")
+    print(f"ID:        {new_book.id}")
     print(f"Title:     {new_book.title}")
     print(f"Author:    {new_book.author}")
     print(f"Genre:     {new_book.genre}")
@@ -39,3 +40,4 @@ def add_book():
     print(f"Pages:     {new_book.pages}")
     print(f"Added:     {new_book.add_date}\n")
     print("\nAdd this book to database (Y/N) ?\n")
+    input()
