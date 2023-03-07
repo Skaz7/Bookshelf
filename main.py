@@ -9,6 +9,8 @@ import os
 
 database_file = "./Data/bookshelf.db"
 
+books_dict = {}
+
 
 def main():
     """Functions that creates main application window and establishes connection to database."""

@@ -2,9 +2,10 @@ import sys
 import os
 from catalog import Catalog
 import time
+from Functionality import add_book
 
 
-class Menu:
+class MainMenu:
     """Displays menu and responds to choices when run."""
 
     def __init__(self):
@@ -44,6 +45,21 @@ Catalogue Menu:
                 print(f"{choice} is not a valid option.")
                 time.sleep(1)
 
+    def show_books(self):
+        pass
 
-menu = Menu()
+    def search_books(self):
+        pass
+
+    def add_book(self):
+        add_book()
+
+    def edit_book(self):
+        pass
+
+    def quit(self):
+        quit()
+
+
+menu = MainMenu()
 menu.run()

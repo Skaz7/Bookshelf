@@ -22,7 +22,7 @@ def add_book():
     year = int(input("Book year: "))
     pages = int(input("Book pages: "))
 
-    new_book = PrintedBook(
+    book = PrintedBook(
         title=title,
         author=author,
         genre=genre,
@@ -32,12 +32,33 @@ def add_book():
     )
 
     print("\n\nBook created!\n")
-    print(f"ID:        {new_book.id}")
-    print(f"Title:     {new_book.title}")
-    print(f"Author:    {new_book.author}")
-    print(f"Genre:     {new_book.genre}")
-    print(f"Year:      {new_book.year}")
-    print(f"Pages:     {new_book.pages}")
-    print(f"Added:     {new_book.add_date}\n")
+    print(f"ID:        {book.id}")
+    print(f"Title:     {book.title}")
+    print(f"Author:    {book.author}")
+    print(f"Genre:     {book.genre}")
+    print(f"Year:      {book.year}")
+    print(f"Pages:     {book.pages}")
+    print(f"Added:     {book.add_date}\n")
     print("\nAdd this book to database (Y/N) ?\n")
-    input()
+    choice = input()
+
+    if choice.lower() == "y" or choice.lower() == "yes":
+        return book
+    elif choice.lower() == "n" or choice.lower() == "no":
+        pass
+    else:
+        print("Please enter a valid choice (Y/N)")
+
+
+def print_book_data():
+    print(f"ID:        {book.id}")
+    print(f"Title:     {book.title}")
+    print(f"Author:    {book.author}")
+    print(f"Genre:     {book.genre}")
+    print(f"Year:      {book.year}")
+    print(f"Pages:     {book.pages}")
+    print(f"Added:     {book.add_date}\n")
+
+
+def print_all_books_titles():
+    pass
