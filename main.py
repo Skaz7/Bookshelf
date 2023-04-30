@@ -10,7 +10,7 @@ books_dict = {}
 
 def main():
     """Functions that creates main application window and establishes connection to database."""
-    create_connection(database_file)
+    # create_connection(database_file)
 
 
 if __name__ == "__main__":
