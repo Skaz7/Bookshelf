@@ -36,17 +36,17 @@ class Catalog:
         print(f"Added  - {new_book.add_date}")
         input()
 
-    def new_printed_book(self, title, author, genre, year, pages):
-        """Create a new printed book with the given information."""
-        self.books.append(PrintedBook(title, author, genre, year, pages))
+    # def new_printed_book(self, title, author, genre, year, pages):
+    #     """Create a new printed book with the given information."""
+    #     self.books.append(PrintedBook(title, author, genre, year, pages))
 
-    def new_ebook(self, title, author, genre, year, eformat, device):
-        """Create a new ebook with the given information."""
-        self.books.append(EBook(title, author, genre, year, eformat, device))
+    # def new_ebook(self, title, author, genre, year, eformat, device):
+    #     """Create a new ebook with the given information."""
+    #     self.books.append(EBook(title, author, genre, year, eformat, device))
 
-    def new_Audiobook(self, title, author, genre, year, subscribed):
-        """Create a new Audiobook with the given information."""
-        self.books.append(Audiobook(title, author, genre, year, subscribed))
+    # def new_Audiobook(self, title, author, genre, year, subscribed):
+    #     """Create a new Audiobook with the given information."""
+    #     self.books.append(Audiobook(title, author, genre, year, subscribed))
 
     def delete_book(
         self,

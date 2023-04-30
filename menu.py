@@ -57,4 +57,6 @@ class MainMenu:
         pass
 
     def quit(self):
+        print("\nThank you for using Bookshelf. Goodbye.\n")
+        time.sleep(1)
         quit()
