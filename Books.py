@@ -20,6 +20,7 @@ class Book:
         global last_id
         last_id += 1
         self.id = last_id
+        self.books = []
 
 
 class PrintedBook(Book):

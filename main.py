@@ -1,11 +1,7 @@
-from dbfunctions import database_exist_check, create_connection
-from settings import *
+from dbfunctions import database_exist_check
 from time import sleep
-from Books import *
-from Functionality import add_book
-import sys
-import pytest
-import os
+from menu import MainMenu
+
 
 database_file = "./Data/bookshelf.db"
 
@@ -19,8 +15,7 @@ def main():
 
 if __name__ == "__main__":
     if database_exist_check(database_file):
-        while True:
-            add_book()
+        MainMenu().run()
 
     else:
         print("\nCan't find database file!\n")

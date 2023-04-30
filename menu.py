@@ -1,8 +1,8 @@
-import sys
 import os
 from catalog import Catalog
 import time
-from Functionality import add_book
+
+# from Functionality import add_book
 
 
 class MainMenu:
@@ -22,7 +22,6 @@ class MainMenu:
         os.system("cls")
         print(
             """
-Catalogue Menu:
 
     1. Show Books
     2. Search for book
@@ -52,14 +51,10 @@ Catalogue Menu:
         pass
 
     def add_book(self):
-        add_book()
+        Catalog().new_book()
 
     def edit_book(self):
         pass
 
     def quit(self):
         quit()
-
-
-menu = MainMenu()
-menu.run()

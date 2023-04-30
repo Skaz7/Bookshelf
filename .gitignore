@@ -29,7 +29,7 @@ Latest commit e8f1298 7 hours ago
 129 lines (105 sloc)  1.76 KB
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+__pycache__/**
 *.py[cod]
 *$py.class
 

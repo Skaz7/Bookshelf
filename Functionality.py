@@ -50,7 +50,7 @@ def add_book():
         print("Please enter a valid choice (Y/N)")
 
 
-def print_book_data():
+def print_book_data(book):
     print(f"ID:        {book.id}")
     print(f"Title:     {book.title}")
     print(f"Author:    {book.author}")
