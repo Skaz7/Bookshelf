@@ -1,4 +1,6 @@
-last_id = 0
+from dbfunctions import get_last_id
+
+last_id = get_last_id()
 
 
 class Book:
@@ -20,7 +22,6 @@ class Book:
         global last_id
         last_id += 1
         self.id = last_id
-        self.books = []
 
 
 class PrintedBook(Book):
