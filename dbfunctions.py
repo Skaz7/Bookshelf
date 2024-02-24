@@ -1,7 +1,6 @@
 import sqlite3
 from sqlite3 import Error
 import os
-import json
 
 
 def create_table(conn, table_name):
@@ -60,12 +59,12 @@ def add_book_to_database(conn, book, table):
     conn.commit()
 
 
-def remove_book_from_database(conn, book, table):
+def remove_book_from_database(conn, title, author, table):
     c = conn.cursor()
 
     try:
         c.execute(
-            f"DELETE FROM {table} WHERE title = '{book.title}' AND author = '{book.author}'"
+            f"DELETE FROM {table} WHERE title = '{title}' AND author = '{author}'"
         )
     except Error as e:
         print(e)
@@ -84,34 +83,9 @@ def get_genre_list():
     return genres_list
 
 
-def get_last_id():
-    database_file = "./booksdata.json"
-    with open(database_file, "r") as file:
-        books_dict = json.load(file)
-        id_list = sorted(list(books_dict.keys()))
-    return int(id_list[-1])
-
-
-def show_books():
-    database_file = "./booksdata.json"
-    with open(database_file, "r") as file:
-        books_dict = json.load(file)
-        for id, book in books_dict.items():
-            print(f"\nBook ID: {id}")
-            for key, value in book.items():
-                print(f"{key: <10} {value}")
-
-
-def save_books_to_file():
-    database_file = "./booksdata.json"
-    with open(database_file, "w", encoding="UTF-8") as file:
-        data = json.dumps(books)
-        file.write(data)
-
-
-if __name__ == "__main__":
-    print(get_genre_list())
-    print()
-    print(get_last_id())
-    print()
-    print(show_books())
+def show_books(conn):
+    c = conn.cursor()
+    c.execute("SELECT * FROM PrintedBooks")
+    rows = c.fetchall()
+    for row in rows:
+        print(row)

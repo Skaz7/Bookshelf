@@ -49,8 +49,8 @@ class MainMenu:
                 time.sleep(1)
 
     def show_bookshelf(self):
-        books = self.catalog.books
-        print(books)
+        conn = create_connection(database_file)
+        print(show_books(conn))
         input()
 
     def search_books(self):
@@ -97,7 +97,15 @@ class MainMenu:
         pass
 
     def delete_book(self):
-        pass
+        title = input("Book Title: ").title()
+        author = input("Book Author: ").title()
+
+        conn = create_connection(database_file)
+        remove_book_from_database(conn, title, author, "PrintedBooks")
+        conn.close()
+        print(f"Book {title} by {author} removed from library.")
+        time.sleep(2)
+        return
 
     def quit(self):
         print("\nThank you for using Bookshelf. Goodbye.\n")
