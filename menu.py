@@ -80,10 +80,12 @@ class MainMenu:
                 print(self.catalog.books)
                 time.sleep(2)
                 return
+            
             elif choice == "n" or choice == "no":
                 print("Book not added.")
                 time.sleep(2)
                 return
+            
             else:
                 print("Invalid input.")
                 time.sleep(2)
