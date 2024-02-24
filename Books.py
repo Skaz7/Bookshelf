@@ -8,11 +8,11 @@ class Book:
 
     def __init__(
         self,
-        title,
-        author,
-        genre,
-        year,
-        add_date,
+        title: str,
+        author: str,
+        genre: str,
+        year: int,
+        add_date: str,
     ):
         self.title = title
         self.author = author
@@ -29,11 +29,11 @@ class PrintedBook(Book):
 
     def __init__(
         self,
-        title,
-        author,
-        genre,
-        year,
-        add_date,
+        title: str,
+        author: str,
+        genre: str,
+        year: int,
+        add_date: str,
         pages,
     ):
         super().__init__(
@@ -51,11 +51,11 @@ class EBook(Book):
 
     def __init__(
         self,
-        title,
-        author,
-        genre,
-        year,
-        add_date,
+        title: str,
+        author: str,
+        genre: str,
+        year: int,
+        add_date: str,
         eformat,
         device,
     ):
@@ -75,11 +75,11 @@ class Audiobook(Book):
 
     def __init__(
         self,
-        title,
-        author,
-        genre,
-        year,
-        add_date,
+        title: str,
+        author: str,
+        genre: str,
+        year: int,
+        add_date: str,
         subscribed,
     ):
         super().__init__(

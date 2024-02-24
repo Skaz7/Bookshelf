@@ -13,11 +13,14 @@ def create_table(conn, table_name):
     """
     try:
         c = conn.cursor()
-        c.execute(f"CREATE TABLE {table_name} (id INTEGER PRIMARY KEY, title TEXT, author TEXT, genre TEXT, year INTEGER, add_date TEXT, pages INTEGER)")
+        c.execute(
+            f"CREATE TABLE {table_name} (id INTEGER PRIMARY KEY, title TEXT, author TEXT, genre TEXT, year INTEGER, add_date TEXT, pages INTEGER)"
+        )
 
     except Error as e:
         print(e)
-        
+
+
 def delete_table(conn, table_name):
     """Function to delete a table in a database."""
     try:
@@ -25,7 +28,8 @@ def delete_table(conn, table_name):
         c.execute(f"DROP TABLE {table_name}")
     except Error as e:
         print(e)
-        
+
+
 def create_connection(database_file):
     """Function to create a connection to a database."""
     conn = None
@@ -36,18 +40,37 @@ def create_connection(database_file):
 
     return conn
 
+
 def database_exist(database_file):
     """Function to check if a database file exists.
     Returns True if the database exists, False otherwise."""
     return os.path.exists(database_file)
 
 
-def add_book_to_database(book, conn, table):
+def add_book_to_database(conn, book, table):
     c = conn.cursor()
-    c.execute(f"INSERT INTO {table} VALUES ({book.title}, {book.author}, {book.genre}, {book.year}, {book.add_date}, {book.pages})")
 
-def remove_book_from_database():
-    pass
+    try:
+        c.execute(
+            f"INSERT INTO {table} VALUES (NULL, '{book.title}', '{book.author}', '{book.genre}', {book.year}, '{book.add_date}', {book.pages})"
+        )
+    except Error as e:
+        print(e)
+
+    conn.commit()
+
+
+def remove_book_from_database(conn, book, table):
+    c = conn.cursor()
+
+    try:
+        c.execute(
+            f"DELETE FROM {table} WHERE title = '{book.title}' AND author = '{book.author}'"
+        )
+    except Error as e:
+        print(e)
+
+    conn.commit()
 
 
 def edit_book_in_database():
